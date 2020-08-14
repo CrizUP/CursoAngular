@@ -1,0 +1,8 @@
+<h1>Numero de autos vendidos: {{ contador }}</h1>
+<div  class="autos-list-container">
+  <div class="container autos-list-item" *ngFor="let auto of autos">
+    <app-auto class="" (seVendioAuto)="addCarrosVendidos()" [auto]="auto"></app-auto>
+  </div>
+</div>
+
+<!-- <input [(ngModel)]="title"> {{title}} -->

@@ -1,0 +1,21 @@
+<!-- <h2>Marca: Nissan</h2>
+<h2>Modelo: Altima</h2>
+<img src="https://cnet4.cbsistatic.com/img/HLLu44FPHv-LnJ0dxJDvbsy-Bh8=/868x488/2019/09/24/21e34422-2496-4472-bb63-12381d85455f/00000img-00000-burst20190624080825073-cover.jpg" alt="">
+<div *ngIf="expression"></div> -->
+<h2>{{ nombreAuto }}</h2>
+<input type="text" [(ngModel)]="nombreAuto">
+<div *ngIf="nombreAuto === 'Altima'"> 
+    <strong>El precio del auto es mayor al $300, 000</strong>
+</div>
+<div [ngSwitch]="nombreAuto">
+    <div *ngSwitchCase="'Versa'">
+        <strong>El precio del auto es mayor al $300, 000</strong>
+    </div>
+    <div *ngSwitchCase="'Sentra'">
+        <strong>El precio del auto es mayor al $200, 000</strong>
+    </div>
+    <div *ngSwitchDefault> No se encontró auto </div>
+</div>
+<ul>
+    <li *ngFor="let auto of listaAutos; index as i">{{ auto }} {{i}} </li>
+</ul>
