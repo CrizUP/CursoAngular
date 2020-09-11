@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,16 @@ const routes: Routes = [
         path: 'autos',
         loadChildren: () => import('./autos/autos.module').then(m => m.AutosModule)
       },
+    ]
+  },
+  {
+    path: 'admin',
+    component: LayoutAdminComponent,
+    children: [
+      {
+        path: 'users',
+        loadChildren: () => import('./usuarios/usuarios.module').then(m => m.UsuariosModule)
+      }
     ]
   },
   {

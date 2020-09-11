@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AutosComponent } from './components/autos/autos.component';
+import { AutosContainer } from './container/autos/autos.container';
 import { AutoDetailComponent } from './components/auto-detail/auto-detail.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AutosComponent
+    component: AutosContainer
   },
   {
     path: ':id',

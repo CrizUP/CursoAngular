@@ -5,12 +5,18 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { FooterAdminComponent } from './components/footer-admin/footer-admin.component';
+import { HeaderAdminComponent } from './components/header-admin/header-admin.component';
+import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.component';
 
 @NgModule({
   declarations: [
     NotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FooterAdminComponent,
+    HeaderAdminComponent,
+    SidebarAdminComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +26,10 @@ import { MaterialModule } from '../material/material.module';
   exports: [
     NotFoundComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FooterAdminComponent,
+    HeaderAdminComponent,
+    SidebarAdminComponent
   ]
 })
 export class SharedModule { }
