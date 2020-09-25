@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 declare const $: any;
 declare interface RouteInfo {
@@ -8,9 +8,13 @@ declare interface RouteInfo {
   class: string;
 }
 export const ROUTES: RouteInfo[] = [
-  { path: 'home-admin', title: 'Home', icon: 'house', class: '' },
-  { path: 'marcas', title: 'Marcas', icon: 'dashboard', class: '' },
-  { path: 'users', title: 'Usuarios', icon: 'dashboard', class: '' }
+  // { path: 'home-admin', title: 'Home', icon: 'house', class: '' },
+  // { path: 'marcas', title: 'Marcas', icon: 'dashboard', class: '' },
+  // { path: 'users', title: 'Usuarios', icon: 'dashboard', class: '' },
+  // { path: 'autos', title: 'Autos', icon: 'dashboard', class: '' }
+  { path: 'home', title: 'Home', icon: 'house', class: '' },
+  { path: 'users', title: 'Usuarios', icon: 'dashboard', class: '' },
+  { path: 'autos/admin', title: 'Autos', icon: 'dashboard', class: '' }
 ];
 
 @Component({
@@ -20,6 +24,7 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarAdminComponent implements OnInit {
 
+  @Input() Username: string;
   menuItems: any[];
   constructor() { }
 

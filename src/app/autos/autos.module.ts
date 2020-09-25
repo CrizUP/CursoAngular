@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { RegistrarAutoContainer } from './container/registrar-auto/registrar-auto.container';
 import { RegistrarAutoComponent } from './components/registrar-auto/registrar-auto.component';
+import { AutosAdminContainer } from './container/autos-admin/autos-admin.container';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RegistrarAutoComponent } from './components/registrar-auto/registrar-au
     AutosContainer,
     AutoDetailComponent,
     RegistrarAutoContainer,
-    RegistrarAutoComponent
+    RegistrarAutoComponent,
+    AutosAdminContainer
   ],
   imports: [
     CommonModule,

@@ -14,8 +14,8 @@ import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    FooterAdminComponent,
     HeaderAdminComponent,
+    FooterAdminComponent,
     SidebarAdminComponent
   ],
   imports: [
@@ -27,9 +27,10 @@ import { SidebarAdminComponent } from './components/sidebar-admin/sidebar-admin.
     NotFoundComponent,
     HeaderComponent,
     FooterComponent,
-    FooterAdminComponent,
     HeaderAdminComponent,
-    SidebarAdminComponent
+    FooterAdminComponent,
+    SidebarAdminComponent,
+    RouterModule
   ]
 })
 export class SharedModule { }
