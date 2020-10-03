@@ -46,6 +46,10 @@ const routes: Routes = [
       {
         path: 'autos',
         loadChildren: () => import('./autos/autos.module').then(m => m.AutosModule)
+      },
+      {
+        path: 'marcas',
+        loadChildren: () => import('./marcas/marcas.module').then(m => m.MarcasModule)
       }
     ]
   },

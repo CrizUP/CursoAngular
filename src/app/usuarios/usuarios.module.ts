@@ -12,7 +12,12 @@ import { LoginContainer } from './containers/login/login.container';
 
 
 @NgModule({
-  declarations: [UsuariosComponent, UsuarioDetailComponent, LoginComponent, UsersContainer, LoginContainer],
+  declarations: [
+    UsuariosComponent,
+    UsuarioDetailComponent,
+    LoginComponent,
+    UsersContainer,
+    LoginContainer],
   imports: [
     CommonModule,
     UsuariosRoutingModule,

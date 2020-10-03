@@ -1,1 +1,50 @@
-<p>marcas-admin works!</p>
+<!-- <button routerLink="registrar">Registrar marca</button>
+<h2 *ngFor="let marca of this.marcas">
+  {{marca.id}}
+  {{marca.nombre}}
+</h2> -->
+<dx-load-panel [closeOnOutsideClick]="false" [(visible)]="isLoadPanelVisible">
+</dx-load-panel>
+<div class="card">
+  <div class="card-header card-header-warning">
+    <h4 class="card-title">Marcas registradas</h4>
+    <div class="text-left-button-rigth">
+      <p class="card-category">Marcas registradas en el sistema</p>
+      <button class="btn btn-primary btn-round" routerLink="registrar">
+        <i class="material-icons">add_circle_outline</i> Registrar marca
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead class="text-primary">
+          <tr>
+            <th class="text-center">ID</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let marca of this.marcas; let i = index">
+            <td class="text-center">{{i + 1}}</td>
+            <td>{{marca.nombre}}</td>
+            <td class="td-actions">
+              <button
+                type="button"
+                rel="tooltip"
+                class="btn btn-success"
+                routerLink="editar/{{this.marca.id}}"
+              >
+                <i class="material-icons">edit</i>
+              </button>
+              <button type="button" rel="tooltip" class="btn btn-danger">
+                <i class="material-icons">close</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

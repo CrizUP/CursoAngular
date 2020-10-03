@@ -5,7 +5,8 @@ import {
   DxDateBoxModule,
   DxTextAreaModule,
   DxSelectBoxModule,
-  DxTextBoxModule
+  DxTextBoxModule,
+  DxLoadPanelModule
 } from 'devextreme-angular';
 // import { from } from 'rxjs';
 
@@ -17,15 +18,16 @@ import {
     DxDateBoxModule,
     DxTextAreaModule,
     DxSelectBoxModule,
-    DxTextBoxModule
+    DxTextBoxModule,
+    DxLoadPanelModule
   ],
   exports: [
     DxFormModule,
     DxDateBoxModule,
     DxTextAreaModule,
     DxSelectBoxModule,
-    DxTextBoxModule
-
+    DxTextBoxModule,
+    DxLoadPanelModule
   ]
 })
 export class DevextremeModule { }

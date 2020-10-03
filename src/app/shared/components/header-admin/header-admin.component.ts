@@ -9,6 +9,7 @@ import { UserService } from '@core/services/user.service';
   templateUrl: './header-admin.component.html',
   styleUrls: ['./header-admin.component.scss']
 })
+// tslint:disable
 export class HeaderAdminComponent implements OnInit {
   private listTitles: any[];
   location: Location;
@@ -43,13 +44,14 @@ export class HeaderAdminComponent implements OnInit {
     body.classList.add('nav-open');
 
     this.sidebarVisible = true;
-  };
+  }
   sidebarClose() {
     const body = document.getElementsByTagName('body')[0];
     this.toggleButton.classList.remove('toggled');
     this.sidebarVisible = false;
     body.classList.remove('nav-open');
-  };
+  }
+  // tslint:disable-next-line: typedef
   sidebarToggle() {
     // const toggleButton = this.toggleButton;
     // const body = document.getElementsByTagName('body')[0];
@@ -113,6 +115,7 @@ export class HeaderAdminComponent implements OnInit {
       titlee = titlee.slice(1);
     }
 
+    // tslint:disable-next-line: no-var-keyword prefer-for-of
     for (var item = 0; item < this.listTitles.length; item++) {
       if (this.listTitles[item].path === titlee) {
         return this.listTitles[item].title;

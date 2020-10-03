@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header card-header-warning">
+    <h4 class="card-title">Registrar Marca</h4>
+  </div>
+  <div class="card-body">
+    <div class="form-group">
+      <label for="nombreMarca">Nombre de la marca</label>
+      <input
+        id="nombreMarca"
+        class="form-control"
+        placeholder="Ingresa el nombre de la marca"
+        [(ngModel)]="this.marcaModel.nombre"
+      />
+    </div>
+
+    <div class="card-footer">
+      <button class="btn btn-danger" routerLink="../../admin">Regresar</button>
+      <button class="btn btn-success" (click)="this.registrarMarcaClicked()">
+        Registrar
+      </button>
+    </div>
+  </div>
+</div>

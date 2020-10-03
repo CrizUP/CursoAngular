@@ -50,4 +50,14 @@ export class UserService {
 
   }
 
+  getToken(): string {
+
+    const data: LoginResponse = this.storage.getJsonValue('User');
+    if (data) {
+      return data.token;
+    }
+    return '';
+
+  }
+
 }
