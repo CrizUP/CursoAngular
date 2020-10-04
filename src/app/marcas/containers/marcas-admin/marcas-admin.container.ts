@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarcaService } from '@core/services/marca.service';
 import { MarcaModel } from '@core/models/marca.model';
+import { NotifyService } from '@core/services/notify.service';
 
 @Component({
   selector: 'app-marcas-admin',
@@ -12,7 +13,8 @@ export class MarcasAdminContainer implements OnInit {
   isLoadPanelVisible = false;
   marcas: MarcaModel[];
   constructor(
-    private marcaService: MarcaService
+    private marcaService: MarcaService,
+    private notifyservice: NotifyService
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,13 @@ export class MarcasAdminContainer implements OnInit {
       // setTimeout(() => {
       this.isLoadPanelVisible = false;
       // }, 2000);
+    });
+  }
+
+  deleteMarca(id: string): void {
+    this.marcaService.deleteMarcaByID(id).subscribe((x) => {
+      console.log(x);
+      this.notifyservice.mostrarNotificacion('success', 'El registro se ha eliminado con éxito');
     });
   }
 

@@ -38,7 +38,12 @@
               >
                 <i class="material-icons">edit</i>
               </button>
-              <button type="button" rel="tooltip" class="btn btn-danger">
+              <button
+                type="button"
+                rel="tooltip"
+                class="btn btn-danger"
+                (click)="deleteMarca(this.marca.id)"
+              >
                 <i class="material-icons">close</i>
               </button>
             </td>

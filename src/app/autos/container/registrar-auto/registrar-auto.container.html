@@ -1,1 +1,10 @@
-<p>registrar-auto works!</p>
+<!-- <app-registrar-auto
+  [autoModel]="this.autoModel"
+  (registrarMarcaClick)="this.registrarMarca()"
+></app-registrar-auto> -->
+
+<app-registrar-auto
+  [autoModel]="this.autoModel"
+  [marcasModel]="this.marcasModel"
+  (registrarAutoClick)="agregarAuto()"
+></app-registrar-auto>
