@@ -34,7 +34,7 @@ export class RegistrarAutoContainer implements OnInit {
   }
 
   agregarAuto(): void {
-    this.autosService.registrarMarca(this.autoModel).subscribe(() => {
+    this.autosService.registrarAuto(this.autoModel).subscribe(() => {
       this.notifiService.mostrarNotificacion('success', `Se ha registrado con éxito el auto '${this.autoModel.nombre}'`);
       this.autoModel.fechaEsamble = new Date();
       this.autoModel.marcaId = '';

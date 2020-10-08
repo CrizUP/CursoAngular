@@ -1,1 +1,20 @@
-
+<div class="container">
+  <div class="text-left-button-rigth">
+    <h2 class="h2">Autos registrados</h2>
+    <button class="btn btn-primary btn-lg py-2" routerLink="registrar">
+      <i class="material-icons">add_circle_outline</i> Registrar marca
+    </button>
+  </div>
+  <div class="row">
+    <div
+      class="col-lg-4 col-md-6 col-sm-12 pt-4"
+      *ngFor="let auto of autosModel"
+    >
+      <app-auto-admin
+        (selectAutoToEdit)="openEdit(auto)"
+        (selectAutoToDelete)="deleteAuto(auto)"
+        [auto]="auto"
+      ></app-auto-admin>
+    </div>
+  </div>
+</div>

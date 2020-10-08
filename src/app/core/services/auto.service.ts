@@ -14,19 +14,19 @@ export class AutoService {
     private http: HttpClient
   ) { }
 
-  registrarMarca(autoModel: AutoRequestModel): Observable<AutoResponseModel> {
-    return this.http.post<AutoResponseModel>(`${environment.UrlApi}auto`, autoModel);
+  registrarAuto(autoModel: AutoRequestModel): Observable<AutoResponseModel> {
+    return this.http.post<AutoResponseModel>(`${environment.UrlApi}Auto`, autoModel);
   }
-  // getAllMarcas(): Observable<MarcaModel[]> {
-  //   return this.http.get<MarcaModel[]>(`${environment.UrlApi}Marca`);
-  // }
-  // getMarcaByID(idmarca: string): Observable<MarcaResponseEditModel> {
-  //   return this.http.get<MarcaResponseEditModel>(`${environment.UrlApi}Marca/${idmarca}`);
-  // }
-  // editarMarca(marcaModel: MarcaRequestEditModel): Observable<any> {
-  //   return this.http.patch(`${environment.UrlApi}Marca`, marcaModel);
-  // }
-  // deleteMarcaByID(idmarca: string): Observable<any> {
-  //   return this.http.delete(`${environment.UrlApi}Marca/${idmarca}`);
-  // }
+  getAllAutos(): Observable<AutoResponseModel[]> {
+    return this.http.get<AutoResponseModel[]>(`${environment.UrlApi}Auto`);
+  }
+  getAutoByID(idAuto: string): Observable<AutoResponseModel> {
+    return this.http.get<AutoResponseModel>(`${environment.UrlApi}Auto/${idAuto}`);
+  }
+  editarAuto(autoModel: AutoResponseModel): Observable<any> {
+    return this.http.patch(`${environment.UrlApi}Auto`, autoModel);
+  }
+  deleteAutoByID(idAuto: string): Observable<any> {
+    return this.http.delete(`${environment.UrlApi}Auto/${idAuto}`);
+  }
 }

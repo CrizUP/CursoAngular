@@ -22,7 +22,12 @@ export class AuthInterceptor implements HttpInterceptor {
     request = this.addToken(request);
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
-        const errorMessage: string = error.error.ResponseMessage;
+        let errorMessage: string;
+        if (error.status === 401) {
+          errorMessage = 'La sesión ha expirado, favor de volver a iniciar';
+        } else {
+          errorMessage = error.error.ResponseMessage;
+        }
         this.notifyService.mostrarNotificacion('danger', errorMessage);
         return throwError(error);
       })

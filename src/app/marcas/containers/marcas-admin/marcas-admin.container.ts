@@ -24,7 +24,10 @@ export class MarcasAdminContainer implements OnInit {
       // setTimeout(() => {
       this.isLoadPanelVisible = false;
       // }, 2000);
-    });
+    },
+      error => {
+        this.isLoadPanelVisible = false;
+      });
   }
 
   deleteMarca(id: string): void {

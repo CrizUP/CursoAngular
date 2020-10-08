@@ -9,6 +9,9 @@ import { MaterialModule } from '../material/material.module';
 import { RegistrarAutoContainer } from './container/registrar-auto/registrar-auto.container';
 import { RegistrarAutoComponent } from './components/registrar-auto/registrar-auto.component';
 import { AutosAdminContainer } from './container/autos-admin/autos-admin.container';
+import { AutoAdminComponent } from './components/auto-admin/auto-admin.component';
+import { EditarAutoComponent } from './components/editar-auto/editar-auto.component';
+import { EditarAutoContainer } from './container/editar-auto/editar-auto.container';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,10 @@ import { AutosAdminContainer } from './container/autos-admin/autos-admin.contain
     AutoDetailComponent,
     RegistrarAutoContainer,
     RegistrarAutoComponent,
-    AutosAdminContainer
+    AutosAdminContainer,
+    AutoAdminComponent,
+    EditarAutoComponent,
+    EditarAutoContainer
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,82 @@
+<div class="card">
+  <div class="card-header card-header-warning">
+    <h4 class="card-title">Registrar auto</h4>
+  </div>
+  <div class="card-body">
+    <mat-form-field>
+      <mat-select
+        placeholder="Seleccionar Marca"
+        [(ngModel)]="this.autoModel.marcaId"
+        name="marcaId"
+        required
+      >
+        <mat-option>--Seleccionar marca--</mat-option>
+        <mat-option *ngFor="let marca of marcasModel" [value]="marca.id">
+          {{ marca.nombre }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="nombreAuto">Nombre del auto</label>
+          <input
+            id="nombreAuto"
+            class="form-control"
+            placeholder="Ingresa el nombre del auto"
+            [(ngModel)]="this.autoModel.nombre"
+            required
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <mat-form-field appearance="fill">
+            <mat-label>Elija la fecha de ensamble</mat-label>
+            <input
+              matInput
+              [matDatepicker]="picker"
+              [(ngModel)]="this.autoModel.fechaEsamble"
+              required
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label for="numeroMotor">Número del motor</label>
+          <input
+            id="numeroMotor"
+            class="form-control"
+            placeholder="Ingresa el número de série del motor"
+            [(ngModel)]="this.autoModel.numeroMotor"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="precioAuto">Precio al público</label>
+      <input
+        id="precioAuto"
+        class="form-control"
+        placeholder="Ingresa el precio que tendrá al público en general"
+        [(ngModel)]="this.autoModel.precioMercado"
+        type="number"
+        step="0.1"
+        required
+      />
+    </div>
+    <div class="card-footer">
+      <button class="btn btn-danger" routerLink="../../">Regresar</button>
+      <button class="btn btn-success" (click)="editarAuto()">
+        Guardar cambios
+      </button>
+    </div>
+  </div>
+</div>

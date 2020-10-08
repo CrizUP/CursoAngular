@@ -9,8 +9,12 @@ import { LayoutAdminComponent } from './layout-admin/layout-admin.component';
 import { CoreModule } from '@core/core.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/services/auth.interceptor';
-
-
+import localeEs from '@angular/common/locales/es';
+import localeEsExtra from '@angular/common/locales/extra/es';
+import { DatePipe, registerLocaleData } from '@angular/common';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LOCALE_ID } from '@angular/core';
+// import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,15 +26,22 @@ import { AuthInterceptor } from './core/services/auth.interceptor';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    CoreModule
+    CoreModule,
+    TranslateModule.forRoot(),
   ],
   providers: [
+    DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    }
+    },
+    { provide: LOCALE_ID, useValue: 'es-MX' }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    registerLocaleData(localeEs);
+  }
+}
