@@ -13,6 +13,7 @@ import { NotifyService } from '@core/services/notify.service';
 export class AutosAdminContainer implements OnInit {
 
   autosModel: AutoResponseModel[] = [];
+  isLoadPanelVisible = false;
 
   constructor(
     private router: Router,
@@ -21,9 +22,14 @@ export class AutosAdminContainer implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isLoadPanelVisible = true;
     this.autosService.getAllAutos().subscribe(x => {
       this.autosModel = x;
-    });
+      this.isLoadPanelVisible = false;
+    },
+      error => {
+        this.isLoadPanelVisible = false;
+      });
   }
 
   openEdit(auto: AutoResponseModel): void {

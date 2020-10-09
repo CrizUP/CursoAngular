@@ -49,7 +49,7 @@ export class EditarAutoContainer implements OnInit {
     });
   }
   editarAuto(): void {
-    this.autosService.editarAuto(this.autoModel).subscribe(() => {
+    this.autosService.editarAuto(this.autoModel).subscribe((e) => {
       this.notifiService.mostrarNotificacion('success', `Se ha editado con éxito el auto`);
     });
   }

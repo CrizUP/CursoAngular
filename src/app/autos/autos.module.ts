@@ -12,6 +12,7 @@ import { AutosAdminContainer } from './container/autos-admin/autos-admin.contain
 import { AutoAdminComponent } from './components/auto-admin/auto-admin.component';
 import { EditarAutoComponent } from './components/editar-auto/editar-auto.component';
 import { EditarAutoContainer } from './container/editar-auto/editar-auto.container';
+import { DevextremeModule } from '@devextreme';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { EditarAutoContainer } from './container/editar-auto/editar-auto.contain
     CommonModule,
     AutosRoutingModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    DevextremeModule,
   ]
 })
 export class AutosModule { }

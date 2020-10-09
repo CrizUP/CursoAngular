@@ -32,8 +32,9 @@ export class MarcasAdminContainer implements OnInit {
 
   deleteMarca(id: string): void {
     this.marcaService.deleteMarcaByID(id).subscribe((x) => {
-      console.log(x);
       this.notifyservice.mostrarNotificacion('success', 'El registro se ha eliminado con éxito');
+      const index = this.marcas.findIndex(d => d.id === id); // find index in your array
+      this.marcas.splice(index, 1);
     });
   }
 
